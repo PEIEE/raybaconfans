@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ray Bacon Fans - Página de Fans de Ray</title>
-    <!-- FAVICON: Usa tu logo actual -->
+    <title>Ray Bacon Fans - Página de Fans de Ray Bacon</title>
+    
+    <!-- FAVICON -->
     <link rel="icon" href="logoray.jpg" type="image/jpeg">
+    
+    <!-- META DESCRIPCIÓN PARA COMPARTIR ENLACE -->
+    <meta name="description" content="Página de fans dedicada a Ray Bacon, el mayor referente de Nintendo Switch en español. Videos actualizados, enlaces oficiales y toda la Bacon Crew reunida.">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Ray Bacon Fans">
+    <meta property="og:description" content="Página de fans dedicada a Ray Bacon, el mayor referente de Nintendo Switch en español. Videos actualizados, enlaces oficiales y toda la Bacon Crew reunida.">
+    <meta property="og:image" content="logoray.jpg">
+    <meta property="og:type" content="website">
+    
     <style>
-        /* (Todos los estilos iguales que antes, los copio para que sea completo) */
+        /* Estilos generales - AHORA SIN overflow: hidden en body */
         body {
             background-color: #ffefef;
             color: #333;
@@ -15,7 +26,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            overflow: hidden;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -99,7 +109,7 @@
             font-size: 18px;
         }
 
-        /* ANIMACIÓN DE INICIO */
+        /* ANIMACIÓN DE INICIO - overflow hidden SOLO aquí */
         #intro {
             position: fixed;
             top: 0;
@@ -113,6 +123,7 @@
             align-items: center;
             z-index: 9999;
             animation: fadeOut 1s ease-in-out 4s forwards;
+            overflow: hidden; /* Solo durante la intro */
         }
         #intro img {
             width: 250px;
@@ -161,7 +172,6 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <div id="main-content">
-        <!-- (Todo el contenido principal igual que antes) -->
         <header>
             <img src="logoray.jpg" alt="Logo Ray Bacon Fans" class="logo-header">
             <h1>Ray Bacon Fans</h1>
