@@ -18,7 +18,6 @@
     <meta property="og:type" content="website">
     
     <style>
-        /* Estilos generales - AHORA SIN overflow: hidden en body */
         body {
             background-color: #ffefef;
             color: #333;
@@ -109,7 +108,7 @@
             font-size: 18px;
         }
 
-        /* ANIMACIÓN DE INICIO - overflow hidden SOLO aquí */
+        /* INTRO FULLSCREEN */
         #intro {
             position: fixed;
             top: 0;
@@ -123,7 +122,6 @@
             align-items: center;
             z-index: 9999;
             animation: fadeOut 1s ease-in-out 4s forwards;
-            overflow: hidden; /* Solo durante la intro */
         }
         #intro img {
             width: 250px;
@@ -213,12 +211,14 @@
     </div>
 
     <script>
-        // Ocultar intro
+        // Al terminar la intro: quitar el bloqueo y permitir scroll
         setTimeout(() => {
             document.getElementById('intro').style.display = 'none';
+            document.body.style.overflow = 'visible'; // Permite scroll
+            document.body.style.height = 'auto';
         }, 5500);
 
-        // PROTECCIÓN
+        // PROTECCIÓN (clic derecho y teclas dev)
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
