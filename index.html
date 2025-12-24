@@ -6,17 +6,26 @@
     <title>Ray Bacon Fans - Página de Fans de Ray Bacon</title>
     
     <!-- FAVICON -->
-    <link rel="icon" href="logoray.jpg" type="image/jpeg">
+    <link rel="icon" href="https://yt3.ggpht.com/ytc/APkrFKbO9ZfZfZfZfZfZfZfZfZfZfZfZfZfZfZfZ=s900-c-k-c0x00ffffff-no-rj" type="image/jpeg">
     
-    <!-- META DESCRIPCIÓN PARA COMPARTIR ENLACE -->
+    <!-- META DESCRIPCIÓN -->
     <meta name="description" content="Página de fans dedicada a Ray Bacon, el mayor referente de Nintendo Switch en español. Videos actualizados, enlaces oficiales y toda la Bacon Crew reunida.">
     
-    <!-- OPEN GRAPH -->
+    <!-- OPEN GRAPH - PARA PREVIEW CON IMAGEN EN REDES -->
     <meta property="og:title" content="Ray Bacon Fans">
     <meta property="og:description" content="Página de fans dedicada a Ray Bacon, el mayor referente de Nintendo Switch en español. Videos actualizados, enlaces oficiales y toda la Bacon Crew reunida.">
-    <meta property="og:image" content="logoray.jpg">
+    <meta property="og:image" content="https://yt3.ggpht.com/ytc/APkrFKbO9ZfZfZfZfZfZfZfZfZfZfZfZfZfZfZ=s900-c-k-c0x00ffffff-no-rj">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="900">
+    <meta property="og:url" content="https://raybaconfans.netlify.app">
     <meta property="og:type" content="website">
-    
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ray Bacon Fans">
+    <meta name="twitter:description" content="Página de fans dedicada a Ray Bacon, el mayor referente de Nintendo Switch en español. Videos actualizados, enlaces oficiales y toda la Bacon Crew reunida.">
+    <meta name="twitter:image" content="https://yt3.ggpht.com/ytc/APkrFKbO9ZfZfZfZfZfZfZfZfZfZfZfZfZfZfZ=s900-c-k-c0x00ffffff-no-rj">
+
     <style>
         html, body {
             height: auto;
@@ -27,7 +36,7 @@
             color: #333;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            overflow-x: hidden; /* Solo ocultamos scroll horizontal */
+            overflow-x: hidden;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -84,7 +93,10 @@
             box-shadow: 0 0 20px rgba(255,69,0,0.6);
         }
         .links a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
             margin: 15px;
             padding: 18px 35px;
             background-color: #ff4500;
@@ -93,11 +105,16 @@
             border-radius: 12px;
             font-size: 22px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
         .links a:hover {
             background-color: #cc3700;
             transform: scale(1.05);
+        }
+        .links img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
         p {
             font-size: 19px;
@@ -111,7 +128,7 @@
             font-size: 18px;
         }
 
-        /* INTRO FULLSCREEN */
+        /* INTRO */
         #intro {
             position: fixed;
             top: 0;
@@ -142,32 +159,20 @@
             animation: fadeInUp 1.5s ease-out;
         }
 
-        @keyframes fadeOut {
-            to { opacity: 0; visibility: hidden; }
-        }
-        @keyframes zoomPulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+        @keyframes zoomPulse { from { transform: scale(1); } to { transform: scale(1.1); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* CONTENIDO PRINCIPAL */
         #main-content {
             opacity: 0;
             animation: fadeIn 1.5s ease-in 4.5s forwards;
-            min-height: 100vh; /* Asegura que ocupe al menos la pantalla */
         }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-    <!-- ANIMACIÓN DE INICIO -->
+    <!-- INTRO -->
     <div id="intro">
         <img src="logoray.jpg" alt="Logo Ray Bacon">
         <h1>Ray Bacon Fans</h1>
@@ -198,7 +203,10 @@
 
             <h2>Únete a la Crew</h2>
             <div class="links">
-                <a href="https://www.youtube.com/@RayBacon" target="_blank">YouTube - Suscríbete</a>
+                <a href="https://www.youtube.com/@RayBacon" target="_blank">
+                    <img src="logoray.jpg" alt="Ray Bacon">
+                    YouTube - Suscríbete
+                </a>
                 <a href="https://discord.com/invite/raybacon" target="_blank">Discord</a>
                 <a href="https://www.instagram.com/epicraybacon/" target="_blank">Instagram</a>
                 <a href="https://www.tiktok.com/@epicraybacon?lang=es" target="_blank">TikTok</a>
@@ -216,7 +224,6 @@
     </div>
 
     <script>
-        // Al terminar la intro: asegurar scroll completo
         setTimeout(() => {
             document.getElementById('intro').style.display = 'none';
             document.body.style.overflow = 'visible';
